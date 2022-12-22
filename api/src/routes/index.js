@@ -13,3 +13,7 @@ router.use('/temperaments', tempRoutes);
 
 
 module.exports = router;
+
+
+//http://localhost:3001/dogs
+//http://localhost:3001/temperaments

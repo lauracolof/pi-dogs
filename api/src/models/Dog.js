@@ -24,9 +24,11 @@ module.exports = (sequelize) => {
     },
     lifeSpan: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     image: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     createdAtDB: {
       type: DataTypes.BOOLEAN,

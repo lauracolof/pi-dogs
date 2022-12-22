@@ -15,7 +15,7 @@ const getApiData = async () => {
       temperament: dog.temperament,
       image: dog.image.url,
       height: dog.height.metric,
-      weight: dog.height.metric,
+      weight: dog.weight.metric,
     };
   });
   return dogData;
@@ -31,7 +31,7 @@ const getDbData = async () => {
       }
     }
   });
-  return dogInDB
+  return dogInDB;
 };
 
 getAllBreeds = async () => {

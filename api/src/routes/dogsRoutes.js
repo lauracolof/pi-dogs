@@ -4,6 +4,7 @@ const { Temperament, Dog } = require('../db');
 
 const router = Router();
 
+//* -------- GET /dogs-------- *//
 router.get('/', async (req, res) => {
   let totalDogs = await getAllBreeds();
 
@@ -21,6 +22,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//* -------- GET /dogs/:id -------- *//
 router.get('/:id', async (req, res) => {
   const allBreeds = await getAllBreeds();
   const { id } = req.params;
@@ -32,6 +34,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//* -------- POST /dogs -------- *//
 router.post('/', async (req, res) => {
   let { name, minHeight, maxHeight, minWeight, maxWeight, lifeSpan, image, createdAtDb, temperament } = req.body;
 

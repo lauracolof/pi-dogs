@@ -1,8 +1,8 @@
-export const getDogs = () => {
-  return fetch(`http://localhost:3001/dogs`)
+export const getDogs = () => (dispatch) => {
+  return fetch(`http://localhost:3001`)
     .then((response) => response.json())
     .then((json) => {
-      dispatchEvent({
+      dispatch({
         type: 'GET_DOGS',
         payload: json
       })
@@ -20,8 +20,8 @@ export const getDogsName = (name) => (dispatch) => {
     })
 };
 
-export const getDogTemperament = (dispatch) => {
-  return fetch(`http://localhost:3001/temperaments`)
+export const getDogTemperament = () => (dispatch) => {
+  return fetch(`http://localhost:3001/temperamnet`)
     .then((response) => response.json())
     .then((json) => {
       dispatch({
@@ -43,11 +43,11 @@ export const getDetail = (id) => (dispatch) => {
 };
 
 export const postDog = (payload) => () => {
-  return fetch(`http://localhost:3001/dogs`, {
+  return fetch(`http://localhost:3001/dog`, {
     method: 'POST',
     headers: {
       accept: 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload)
   })

@@ -4,6 +4,7 @@ const { Temperament } = require('../db');
 
 const router = Router();
 
+//* -------- GET /temperamets-------- *//
 router.get('/', async (req, res) => {
   const dogTemperament = await getTemperament();
   const allTemperaments = await Temperament.findAll();
