@@ -131,7 +131,7 @@
   width: 200px;
 }
 
-.maxHeihgt {
+.maxHeight {
   position: relative;
   bottom: 50px;
   display: flex;
@@ -145,7 +145,7 @@
   text-shadow: 2px 3px 4px #000000;
 } 
 
-.maxHeihgtInput {
+.maxHeightInput {
   margin-left: 12px;
   text-align: center;
   background-color: rgb(230, 228, 228);
@@ -174,5 +174,189 @@
 }
 
 .minWeightInput {
+  margin-left: 12px;
+  text-align: center;
+  position: relative;
+  background-color: rgb(230, 228, 228);
+  border: 0;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 0px;
+  font-size: 18px;
+  height: 30px;
+  width: 200px;
+}
 
+.maxWeight {
+  position: relative;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 5rem;
+  font-size: 2rem;
+  text-align: center;
+  color: rgb(223, 223, 223);
+  text-shadow: 2px 3px 4px #000000;
+}
+
+.maxWeightInput {
+  margin-left: 12px;
+  text-align: center;
+  background-color: rgb(230, 228, 228);
+  border: 0;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 0px;
+  font-size: 18px;
+  height: 30px;
+  width: 200px;
+}
+
+.lifeSpan {
+  position: relative;
+  bottom: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 5rem;
+  font-size: 2rem;
+  color: rgb(223, 223, 223);
+  text-shadow: 2px 3px 4px #000000;
+}
+
+.lifeSpanInput {
+  margin-left: 12px;
+  text-align: center;
+  background-color: rgb(230, 228, 228);
+  border: 0;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 0px;
+  font-size: 18px;
+  height: 30px;
+  width: 200px;
+}
+
+.picture {
+  position: relative;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 5rem;
+  font-size: 2rem;
+  color: rgb(223, 223, 223);
+  text-shadow: 2px 3px 4px #000000;
+}
+
+.pictureInput {
+  margin-left: 12px;
+  text-align: center;
+  background-color: rgb(230, 228, 228);
+  border: 0;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 0px;
+  font-size: 18px;
+  height: 30px;
+  width: 200px;
+}
+
+.createDogButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  border: 2px solid rgb(136, 131, 131);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 0px;
+  position: relative;
+  left: 117px;
+  top: 33px;
+}
+
+.createDogButton:active {
+  background-color: rgb(245, 245, 245);
+  transform: translateY(1px);
+}
+
+.listTemps {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
+  text-transform: capitalize;
+  position: relative;
+  left: 108px;
+  top: 25px;
+}
+
+.temperamentsItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  right: 22px;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 2px #000000;
+  position: relative;
+  top: 25px;
+}
+
+.error {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(219, 216, 0);
+}
+
+.refreshh{
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  position: relative;
+  bottom: 435px;
+  left: 560px;
+  cursor: pointer;
+  font-size: 28px;
+  width: 2%;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.refreshh .icon {
+  width: 21px;
+  height: 21px;
+  transition: all 0.4s ease-in-out;
+}
+
+.refreshh:hover {
+  transition-delay: 0s;
+}
+
+.refreshh:hover .icon {
+  transform: rotate(360deg) scale(1);
 }

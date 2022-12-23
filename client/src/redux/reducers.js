@@ -56,7 +56,7 @@ function rootReducer(state = initialState, action) {
         ? allDogs2
         : allDogs2.filter((e) => {
           if (action.payload === 'Created') {
-            if (el.createdAtDb) {
+            if (e.createdAtDb) {
               return e;
             }
           } else if (action.payload === 'Api') {

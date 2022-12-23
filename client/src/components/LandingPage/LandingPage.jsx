@@ -7,7 +7,7 @@ export default function LandingPage () {
     <>
       <div className='background'>
         <div>
-          <h1 className='welcomeText'>Welcome to my the dog's page</h1>
+          <h1 className='welcomeText'>Welcome to my dog's app!</h1>
           <Link to={'/home'}>
             <span className='enterButton'>Enter</span>
           </Link>
