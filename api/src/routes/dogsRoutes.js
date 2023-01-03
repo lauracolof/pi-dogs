@@ -20,6 +20,8 @@ router.get('/', async (req, res) => {
   } else {
     res.status(200).send(totalDogs);
   }
+
+
 });
 
 //* -------- GET /dogs/:id -------- *//
@@ -38,21 +40,23 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   let { name, minHeight, maxHeight, minWeight, maxWeight, lifeSpan, image, createdAtDb, temperament } = req.body;
 
-  let height = minHeight + ' - ' + maxHeight;
-  let weight = minWeight + ' - ' + maxWeight;
 
   let dogCreated = await Dog.create({
-    name, height, weight, lifeSpan, image, createdAtDb
-  }
-  );
+    name,
+    minHeight,
+    maxHeight,
+    minWeight,
+    maxWeight,
+    lifeSpan,
+    createdAtDb
+  });
 
   let temperamentDB = await Temperament.findAll({
     where: {
       name: temperament
     }
   })
-
-  dogCreated.addTemperament(temperamentDB)
+  await dogCreated.addTemperament(temperamentDB)
   res.status(200).send(`Dog created!`)
 });
 
