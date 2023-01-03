@@ -19,10 +19,13 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+const { savedTemperaments } = require('./src/insertTemperamentsDB/getTemperaments');
 
 // Syncing all the models at once.
+
 conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
+  server.listen(3001, async () => {
+    await savedTemperaments();
     console.log('%s listening at PORT: 3001'); // eslint-disable-line no-console
   });
 });
