@@ -12,7 +12,7 @@ const NavBar = ({ brand }) => {
           {brand}
           <img src={Fou} className='Fou' alt="" />
         </Link>
-        <Link to='/dog' className='Creation'>
+        <Link to='/dogs' className='Creation'>
           Create your dog!
         </Link>
         <SearchBar placeholder='Search a dog!' />

@@ -1,0 +1,75 @@
+.Pagination__ul {
+  list-style-type: none;
+  padding: 5px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.Pagination__Li {
+  padding: 10px;
+}
+
+.list {
+  display: inline-flex;
+  padding: 1px;
+}
+
+.list > button {
+
+  height: 35px;
+  width: 35px;
+  margin: 5px;
+  bottom: 19px;
+  border-radius: 25px;
+  font-weight: 200;
+  left: 135px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background-color: #000000a2;
+  position: relative;
+  flex-direction: row;
+}
+
+.list > button:hover {
+  color: rgb(255, 255, 255);
+}
+
+.list > button:active {
+  position: relative;
+  color: rgb(255, 255, 255);
+  background-color: rgb(71, 117, 218);
+}
+
+
+.advanceButton {
+  position: relative;
+  left: 1115px;
+  bottom: 65px;
+  height: 35px;
+  width: 65px;
+  border-radius: 17px;
+  font-weight: 200;
+  letter-spacing: 2.5px;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+  cursor: pointer;
+  /* border: transparent; */
+  background-color: #000000a2;
+}
+
+.backButton {
+  position: relative;
+  bottom: 65px;
+  left: 74px;
+  height: 35px;
+  width: 65px;
+  border-radius: 17px;
+  font-weight: 200;
+  letter-spacing: 2.5px;
+  color: rgb(255, 255, 255);
+  /* -webkit-box-reflect: below 5px linear-gradient(transparent, #0002); */
+  transition: 0.3s;
+  cursor: pointer;
+  /* border: transparent; */
+  background-color: #000000a2;
+}

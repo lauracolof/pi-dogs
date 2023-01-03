@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getDogs, filterDogsByWeight, filterDogsByCreated, filterByName, filterDogsByTemperament, getDogTemperament } from "../../redux/actions";
+import { getDogs, orderDogsByWeight, filterDogsByCreated, filterByName, filterDogsByTemperament, getDogTemperament } from "../../redux/actions";
 import Card from '../DogCard/DogCard.jsx';
 import './Home.css';
 import Pagination from '../Pagination/Pagination.jsx';
@@ -13,11 +13,10 @@ export default function Home () {
   const temperament = useSelector((state) => state.temperaments);
 
   const [loading, setLoading] = useState(true);
-  
   const [currentPage, setCurrentPage] = useState(1); // inicio en la primer página
-  const [dogsPerPage, setDogsPerPage] = useState(8) // cuántas cartas muestro por página
-  const [peso, setPeso] = useState('');
-  const [order, setOrder] = useState('');
+  const [dogsPerPage, ] = useState(8) // cuántas cartas muestro por página
+  const [, setPeso] = useState('');
+  const [, setOrder] = useState('');
 
   const indexOfLastDog = currentPage * dogsPerPage // 1*8
   const indexOfFirstDog = indexOfLastDog - dogsPerPage // 8 - 8;
@@ -58,7 +57,7 @@ export default function Home () {
 
   function handleFilterDogByWeight(e) {
     e.preventDefault();
-    dispatch(filterDogsByWeight(e.target.value))
+    dispatch(orderDogsByWeight(e.target.value))
     setCurrentPage(1)
     setPeso(`${e.target.value}`)
   };
@@ -69,11 +68,10 @@ export default function Home () {
   };
 
   function handleFilterDogsByTemperament(e) {
-    e.preventDefault();
     dispatch(filterDogsByTemperament(e.target.value))
   };
 
-  function handleClick() {
+  function handleRefresh() {
     window.location.reload(false);
   };
 
@@ -90,14 +88,14 @@ export default function Home () {
             <option value='Desc'>Z-A</option>
           </select>
 
-          <select className='listAlpha' onChange={(e) => handleFilterDogByWeight}>
+          <select className='listAlpha' onChange={(e) => handleFilterDogByWeight (e)}>
             <option value='AllWeights'>Unorderer weights</option>
             <option value='HeavyWeight'>Heaviest breeds</option>
             <option value='LightWeight'>Lightest breeds</option>
           </select>
 
           <select className='listAlpha' onChange={(e) => handleFilterDogByCreated(e) }>
-          <option hidden='Alll'>All breeds</option>
+          <option hidden='AllCreated'>All breeds</option>
             <option value='Api'>Existing breeds</option>
             <option value='Created'>Created breeds</option>
           </select>
@@ -105,12 +103,12 @@ export default function Home () {
           <select onChange={(e) => handleFilterDogsByTemperament (e)} className='listAlpha'>
             <option value='Temps'>Temperaments</option>
             {temperament.map((temp) => (
-              <option value={temp}>{temp}</option>
+              <option key={temp} value={temp}>{temp}</option>
             ))};
           </select>
           
-          <button type='submit' onClick={handleClick} className='refresh'>
-            <img className='icon' scr='https://htmlacademy.ru/assets/icons/reload-6x-white.png' alt='' />
+          <button onClick={handleRefresh} className='refresh'>
+            Refresh
           </button>
         </div>
 
@@ -118,16 +116,19 @@ export default function Home () {
           {currentDog?.map((e) => {
             return (
               <Fragment>
-                <Card 
-                  id={e.id}
-                  name={e.name}
-                  image={e.image ? e.image : e.image}
-                  temperament={e.temperament}
-                  temperaments={e.temperaments}
-                  height={e.height}
-                  weight={e.weight}
-                  createdAtDb={e.createdAtDb}
-                />
+                {
+                  <Card 
+                    key={e.id}
+                    id={e.id}
+                    name={e.name}
+                    image={e.image}
+                    temperament={e.temperament}
+                    temperaments={e.temperaments}
+                    height={e.height + 'cm'}
+                    weight={e.weight + 'kg'}
+                    createdAtDb={e.createdAtDb}
+                  />
+                }
               </Fragment>
             )
           })}

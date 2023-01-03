@@ -3,54 +3,55 @@ body {
 }
 
 .wallpapeerr{
-  background-image: url('../img/blueEyesDoggo.jpg');
+  background-color: rgb(37, 50, 58, 0.5);
   filter: grayscale(5%);
-  background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 100%;
-  /* z-index: -1; */
-  /* margin-bottom: 0%; */
+  color:rgb(238, 236, 236);
+  
+  text-shadow: 2px 3px 4px #000000;
+  text-align: center;
   position: fixed;
 }
 
 .card-containeer {
   display: flex;
   position: fixed;
-  left: 500px;
-  top: 130px;
+  left: 420px;
+  top: 110px;
   flex-direction: column;
   align-items: center;
   backdrop-filter: blur(6px);
-  width: 40%;
-  height: 100%;
-  overflow:visible ;
+  width: 38%;
+  height: 80%;
+  /* overflow:visible ; */
   box-shadow: 0px 0px 15px -5px;
-  margin-bottom: 10%;
   border-radius: 10px;
-  border: 0.2rem solid rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
 };
 
 .name {
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-  width: 99%;
+  /* margin-bottom: 0.5rem; */
+  /* margin-top: 0.5rem; */
+  text-align: center;
+
+  width: 60%;
   text-align: center;
   color: rgb(255, 255, 255);
-  font-weight: normal;
-  font-style: normal;
   text-shadow: 2px 3px 4px #000000;
 }
 
 .card-conteent {
-  margin: 15px;
+  margin: 20px;
   margin-top: 0.5rem;
 }
 
 .temperameents {
   text-align: center;
   color: rgb(238, 236, 236);
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 2px 2px 6px #000000;
+  font-size: large;
 }
 
 .heightAndWeightAndSpan {
@@ -59,4 +60,10 @@ body {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: 2px 2px 4px #000000;
+}
+
+.pcture {
+  display:block;
+  margin:auto;
+  /* margin-top: 20px; */
 }

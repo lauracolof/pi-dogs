@@ -4,15 +4,16 @@
   overflow: hidden;
   transition: 0.3s;
   animation: ease-in-out;
-  box-shadow: 0px 0px 15px 0px;
+  box-shadow: 0px 0px 10px 0px;
   margin-bottom: 20%;
   border-radius: 20px;
   border: 2px solid rgb(0, 0, 0);
+  transition: transform 0.3s;
 }
 
 .card-container:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 0px 15px 2px;
+  transform: translateY(-2px);
+  box-shadow: 0px 0px 10px 2px;
 }
 
 .name {
@@ -54,7 +55,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 15px 30px;
+  padding: 13px;
   transition: 0.4s;
   cursor: pointer;
   text-transform: uppercase;

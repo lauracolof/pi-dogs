@@ -1,5 +1,16 @@
+export const GET_DOGS = 'GET_DOGS';
+export const GET_DOGS_NAME = 'GET_DOGS_NAME';
+export const GET_DOGS_TEMPERAMENT = 'GET_DOGS_TEMPERAMENT';
+export const GET_DETAIL = 'GET_DETAIL';
+export const ORDER_BY_WEIGHT = 'ORDER_BY_WEIGHT';
+export const FILTER_BY_CREATED = 'FILTER_BY_CREATED';
+export const ORDER_BY_NAME = 'ORDER_BY_NAME';
+export const FILTER_DOGS_BY_TEMPERAMENT = 'FILTER_DOGS_BY_TEMPERAMENT';
+
+
+
 export const getDogs = () => (dispatch) => {
-  return fetch(`http://localhost:3001`)
+  return fetch(`http://localhost:3001/dogs`)
     .then((response) => response.json())
     .then((json) => {
       dispatch({
@@ -21,7 +32,7 @@ export const getDogsName = (name) => (dispatch) => {
 };
 
 export const getDogTemperament = () => (dispatch) => {
-  return fetch(`http://localhost:3001/temperamnet`)
+  return fetch(`http://localhost:3001/temperaments`)
     .then((response) => response.json())
     .then((json) => {
       dispatch({
@@ -29,6 +40,13 @@ export const getDogTemperament = () => (dispatch) => {
         payload: json
       })
     })
+};
+
+export const filterDogsByTemperament = (payload) => {
+  return {
+    type: 'FILTER_DOGS_BY_TEMPERAMENT',
+    payload
+  }
 };
 
 export const getDetail = (id) => (dispatch) => {
@@ -43,7 +61,7 @@ export const getDetail = (id) => (dispatch) => {
 };
 
 export const postDog = (payload) => () => {
-  return fetch(`http://localhost:3001/dog`, {
+  return fetch(`http://localhost:3001/dogs`, {
     method: 'POST',
     headers: {
       accept: 'application/json',
@@ -53,9 +71,9 @@ export const postDog = (payload) => () => {
   })
 };
 
-export const filterDogsByWeight = (payload) => {
+export const orderDogsByWeight = (payload) => {
   return {
-    type: 'FILTER_BY_WEIGHT',
+    type: 'ORDER_BY_WEIGHT',
     payload
   }
 };
@@ -74,9 +92,3 @@ export const filterByName = (payload) => {
   }
 };
 
-export const filterDogsByTemperament = (payload) => {
-  return {
-    type: 'FILTER_DOGS_BY_TEMPERAMENT',
-    payload
-  }
-};

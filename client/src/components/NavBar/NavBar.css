@@ -1,7 +1,7 @@
 .navBar {
   background-color: rgb(37, 50, 58, 0.5);
   background-repeat: no-repeat;
-  height: 100px;
+  height: 80px;
   position: absolute;
   width: 100%;
   z-index: 1;
@@ -10,11 +10,11 @@
 .title {
   display: flex;
   flex-direction: column;
-  max-width: 14%;
+  max-width: 10%;
   justify-content: center;
   color: rgb(233, 231, 231);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 35px;
+  font-size: 30px;
   text-decoration: none;
   align-items: center;
   text-align: center;
@@ -28,16 +28,15 @@
   position: relative;
   font-size: 25px;
   left: 1000px;
-  bottom: 90px;
+  bottom: 77px;
   color: rgb(233, 231, 231);
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 18%;
 }
 
 .Fou {
-  justify-content: left;
   position: relative;
   top: 75px;
-  opacity: 0.68;
-  width: 275px;
+  opacity: 0.65;
+  width: 230px;
 }
