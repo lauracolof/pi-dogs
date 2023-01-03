@@ -95,7 +95,7 @@ function rootReducer(state = initialState, action) {
     case 'GET_DETAIL':
       return {
         ...state,
-        detail: []
+        detail: action.payload
       }
     default:
       return state;

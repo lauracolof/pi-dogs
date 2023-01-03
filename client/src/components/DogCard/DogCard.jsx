@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function Card ({name, image, temperament, temperaments, height, weight, id, createdAtDb}) {
+
   return (
     <div className='card-container'>
       <div>
@@ -17,7 +18,7 @@ export default function Card ({name, image, temperament, temperaments, height, w
         <h4 className='temperaments'>
           {createdAtDb ? temperaments.map((e) => e.name).join(', ') : temperament}
         </h4>
-        <h5 className='heightAndWeight'>Weight: {weight}</h5>
+        <h5 className='heightAndWeight'>Weight: </h5>
         <h5 className='heightAndWeight'>Height: {height}</h5>
         <Link to={'/home/' + id}>
           <button className='btn'>Learn more</button>

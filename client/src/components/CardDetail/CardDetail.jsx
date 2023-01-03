@@ -11,10 +11,11 @@ export default function Detail() {
 
   const [loading, setLoading] = useState(true);
   const selectedDog = useSelector((state) => state.detail);
+  console.log(selectedDog);
 
   useEffect(() => {
     dispatch(getDetail(id))
-  });
+  }, []);
 
 
   return (
@@ -27,10 +28,10 @@ export default function Detail() {
               <div className='wallpapeerr'>
                 <h1 className='naame'>{selectedDog[0].name}</h1>
                 <img src={selectedDog[0].image} alt="" width='300px' className='pcture' />
-                <h2 className='temperameents'>Temperaments: {!selectedDog[0].createdAtDb ? selectedDog[0].temperament : selectedDog[0].temperaments.map(e => e.name + (', ') ) }.</h2>
-                <h3 className='heightAndWeightAndSpan'>Breed's height: {selectedDog[0].height}</h3>
-                <h3 className='heightAndWeightAndSpan'>Breed's weight: {selectedDog[0].weight}</h3>
-                <h4 className='heightAndWeightAndSpan'>Breed's life span: {selectedDog[0].createdAtDb ? selectedDog[0].lifeSpan + 'years' : selectedDog[0].lifeSpan}</h4>
+                <h2 className='temperameents'>Temperaments: {selectedDog[0].temperaments.map((t) => t.name).join(', ')}</h2>
+                <h3 className='heightAndWeightAndSpan'>Breed's height: {selectedDog[0].minHeight + " - " + selectedDog[0].maxHeight} cm</h3>
+                <h3 className='heightAndWeightAndSpan'>Breed's weight: {selectedDog[0].minWeight + " - " + selectedDog[0].maxWeight} kg</h3>
+                <h4 className='heightAndWeightAndSpan'>Breed's life span: {selectedDog[0].lifeSpan + ' years'}</h4>
               </div>
             </div> 
 
