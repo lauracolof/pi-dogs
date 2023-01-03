@@ -14,11 +14,19 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    height: {
+    minHeight: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    weight: {
+    maxHeight: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    minWeight: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    maxWeight: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -29,11 +37,12 @@ module.exports = (sequelize) => {
     image: {
       type: DataTypes.STRING,
       allowNull: true,
+      defaultValue: 'https://www.hartz.com/wp-content/uploads/2022/01/newborn-puppies-bathroom-1.jpg'
     },
     createdAtDB: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
-      allowNull: false
+      allowNull: true
     }
   });
 };
