@@ -3,7 +3,11 @@ import './DogCard.css';
 import { Link } from 'react-router-dom';
 
 
-export default function Card ({name, image, temperament, temperaments, height, weight, id, createdAtDb}) {
+export default function Card ({name, image, temperament, minHeight, maxHeight, minWeight, maxWeight, temperaments, height, weight, id}) {
+    console.log("temperaments:", temperaments)
+    console.log("temperament:", temperament)
+
+  
 
   return (
     <div className='card-container'>
@@ -15,11 +19,18 @@ export default function Card ({name, image, temperament, temperaments, height, w
       </div>
 
       <div className='card-content'>
-        <h4 className='temperaments'>
-          {createdAtDb ? temperaments.map((e) => e.name).join(', ') : temperament}
+        <h4 className='temperaments'>Temperaments:  
+          {temperaments !== undefined ? " " + temperaments.map((t) => t.name).join(', ') : " " + temperament}
         </h4>
-        <h5 className='heightAndWeight'>Weight: </h5>
-        <h5 className='heightAndWeight'>Height: {height}</h5>
+        <h5 className='heightAndWeight'>Weight: 
+          {
+            minWeight !== undefined ? " " + minWeight + " - " + maxWeight + "kg" : " " + weight
+          }
+        </h5>
+        <h5 className='heightAndWeight'>Height: 
+          {
+            minHeight !== undefined ? " " + minHeight + " - " + maxHeight + "cm" : " " + height
+          }</h5>
         <Link to={'/home/' + id}>
           <button className='btn'>Learn more</button>
         </Link>

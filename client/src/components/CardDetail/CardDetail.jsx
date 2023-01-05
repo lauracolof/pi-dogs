@@ -5,17 +5,22 @@ import { getDetail } from "../../redux/actions";
 import './CardDetail.css';
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
-export default function Detail() {
+export default function Detail({name, image, temperament, temperaments, height, weight, minHeight, maxHeight, minWeight, maxWeight, createdAtDb }) {
+
   const dispatch = useDispatch();
   const { id } = useParams();
 
   const [loading, setLoading] = useState(true);
-  const selectedDog = useSelector((state) => state.detail);
-  console.log(selectedDog);
-
+  const dog = useSelector((state) => state.detail);
+  
   useEffect(() => {
     dispatch(getDetail(id))
   }, []);
+
+  console.log("DOG", dog)
+  console.log("IDS:", id)
+
+  
 
 
   return (
@@ -23,15 +28,18 @@ export default function Detail() {
       <div className='wallpapeerr' />
       <div>
         {
-          selectedDog.length > 0 && loading !== true 
+          dog.length && loading !== true 
           ? <div className='card-containeer'>
               <div className='wallpapeerr'>
-                <h1 className='naame'>{selectedDog[0].name}</h1>
-                <img src={selectedDog[0].image} alt="" width='300px' className='pcture' />
-                <h2 className='temperameents'>Temperaments: {selectedDog[0].temperaments.map((t) => t.name).join(', ')}</h2>
-                <h3 className='heightAndWeightAndSpan'>Breed's height: {selectedDog[0].minHeight + " - " + selectedDog[0].maxHeight} cm</h3>
-                <h3 className='heightAndWeightAndSpan'>Breed's weight: {selectedDog[0].minWeight + " - " + selectedDog[0].maxWeight} kg</h3>
-                <h4 className='heightAndWeightAndSpan'>Breed's life span: {selectedDog[0].lifeSpan + ' years'}</h4>
+                <h1 className='naame'>{dog[0].name}</h1>
+                <img src={dog[0].image} alt="" width='300px' position='relative' top='-25px' left='11px' className='pcture' />
+                <h2 className='temperameents' position='relative' top='40px'>Temperaments: 
+                {  dog[0].image ? temperaments.map((t) => t.name).join(', ') : dog[0].temperament
+                }</h2>
+                <h3 className='heightAndWeightAndSpan' position='relative' top='40px'>Breed's height: 
+                { dog[0].height} cm</h3>
+                <h3 className='heightAndWeightAndSpan' position='relative'>Breed's weight: { + " " + dog[0].weight} kg</h3>
+                <h4 className='heightAndWeightAndSpan' position='relative'>Breed's life span: {dog[0].lifeSpan} </h4>
               </div>
             </div> 
 

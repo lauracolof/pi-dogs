@@ -101,6 +101,7 @@ export default function Home () {
           </select>
 
           <select onChange={(e) => handleFilterDogsByTemperament (e)} className='listAlpha'>
+            
             <option value='Temps'>Temperaments</option>
             {temperament.map((temp) => (
               <option key={temp} value={temp}>{temp}</option>
@@ -114,18 +115,23 @@ export default function Home () {
 
         <div className='positions'>
           {currentDog?.map((e) => {
+          console.log(e.temperaments)
             return (
               <Fragment>
                 {
                   <Card 
-                    key={e.id}
-                    id={e.id}
-                    name={e.name}
-                    image={e.image}
+                  key={e.id}
+                  id={e.id}
+                  name={e.name}
+                  image={e.image}
                     temperament={e.temperament}
                     temperaments={e.temperaments}
                     height={e.height + 'cm'}
                     weight={e.weight + 'kg'}
+                    minHeight={e.minHeight}
+                    maxHeight={e.maxHeight}
+                    minWeight={e.minWeight}
+                    maxWeight={e.maxWeight}
                     createdAtDb={e.createdAtDb}
                   />
                 }
