@@ -5,7 +5,7 @@ import { getDetail } from "../../redux/actions";
 import './CardDetail.css';
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
-export default function Detail({name, image, temperament, temperaments, height, weight, minHeight, maxHeight, minWeight, maxWeight, createdAtDb }) {
+export default function Detail() {
 
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -15,13 +15,7 @@ export default function Detail({name, image, temperament, temperaments, height, 
   
   useEffect(() => {
     dispatch(getDetail(id))
-  }, []);
-
-  console.log("DOG", dog)
-  console.log("IDS:", id)
-
-  
-
+  }, [dispatch, id]);
 
   return (
     <>
@@ -34,11 +28,14 @@ export default function Detail({name, image, temperament, temperaments, height, 
                 <h1 className='naame'>{dog[0].name}</h1>
                 <img src={dog[0].image} alt="" width='300px' position='relative' top='-25px' left='11px' className='pcture' />
                 <h2 className='temperameents' position='relative' top='40px'>Temperaments: 
-                {  dog[0].image ? temperaments.map((t) => t.name).join(', ') : dog[0].temperament
-                }</h2>
+                { dog[0].temperaments ? " " + dog[0].temperaments.map((t) => t.name).join(', ') : dog[0].temperament }
+                </h2>
                 <h3 className='heightAndWeightAndSpan' position='relative' top='40px'>Breed's height: 
-                { dog[0].height} cm</h3>
-                <h3 className='heightAndWeightAndSpan' position='relative'>Breed's weight: { + " " + dog[0].weight} kg</h3>
+                { dog[0].minHeight ? " " + dog[0].minHeight + " - " + dog[0].maxHeight : dog[0].height} 
+                cm</h3>
+                <h3 className='heightAndWeightAndSpan' position='relative'>Breed's weight: 
+                { dog[0].minWeight ? " " + dog[0].minWeight + " - " + dog[0].maxWeight : dog[0].weight }
+                kg</h3>
                 <h4 className='heightAndWeightAndSpan' position='relative'>Breed's life span: {dog[0].lifeSpan} </h4>
               </div>
             </div> 

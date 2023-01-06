@@ -3,11 +3,7 @@ import './DogCard.css';
 import { Link } from 'react-router-dom';
 
 
-export default function Card ({name, image, temperament, minHeight, maxHeight, minWeight, maxWeight, temperaments, height, weight, id}) {
-    console.log("temperaments:", temperaments)
-    console.log("temperament:", temperament)
-
-  
+export default function Card ({name, image, temperament, minHeight, maxHeight, minWeight, maxWeight, temperaments, height, weight, id}) {  
 
   return (
     <div className='card-container'>

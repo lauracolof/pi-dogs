@@ -69,6 +69,7 @@ export default function Home () {
 
   function handleFilterDogsByTemperament(e) {
     dispatch(filterDogsByTemperament(e.target.value))
+
   };
 
   function handleRefresh() {
