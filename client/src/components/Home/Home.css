@@ -4,26 +4,22 @@ body {
 }
 
 .doggos {
-  background-color: rgb(37, 50, 58, 0.5);
-  ;
+  background-color: #adc178;
   filter: grayscale(5%);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 100%;
   background-attachment: fixed;
-  /* z-index: -1; */
-  /* margin-bottom: 0%; */
 }
 
 .positions {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
   position: relative;
-  margin-top: 180px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  padding-left: 65px;
+  grid-gap: 25px;
+  top: 160px;
 }
 
 .lists {
@@ -39,22 +35,22 @@ body {
   border-right: none;
   border-left: none;
   border-bottom: none;
-  border-radius: 6px;
+  border-radius: 16px;
   margin-block-start: 3px;
-  color: white;
-  background-color: rgb(37, 50, 58, 0.5);
+  color: #161a1d;
+  background-color: #90a955;
   cursor: pointer;
   text-align: center;
   font-size: large;
-  border: .14rem solid black;
+  border: .14rem solid #161a1d;
   margin: 10px;
 }
 
 .refresh {
   border-radius: 18px;
   /* margin-block-start: 3px; */
-  color: rgb(71, 117, 218);
-  background-color: rgba(0, 0, 0, 2.2);
+  color: #90a955;
+  background-color: black;
   cursor: pointer;
   text-align: center;
   font-size: large;

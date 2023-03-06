@@ -15,13 +15,13 @@ export default function Pagination({dogsPerPage, allDogs, pagination, prevPage, 
         {pageNumbers?.map((number) => {
           return (
             //loop for the pageNumbers
-          <li className={style.list}>
+          <li key={number} className={style.list}>
             <button onClick={() => pagination(number)}>{number}</button>
           </li>)
           })}
       </ul>
-      <button className={style.backButton} onClick={prevPage}>Back</button>
-      <button className={style.advanceButton} onClick={nextPage}>Next</button>
+      <button className={style.backButton} onClick={prevPage}>{'<<'}</button>
+      <button className={style.advanceButton} onClick={nextPage}> {'>>'}</button>
     </div>
   );
 }

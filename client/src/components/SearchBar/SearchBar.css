@@ -2,8 +2,8 @@
   display: flex;
   justify-content: right;
   position: relative;
-  left: 170px;
-  bottom: 105px;
+  left: 30vh;
+  top: -5.2vw;
   right: 20px;
   width: 195px;
 }
@@ -27,7 +27,7 @@
   background-color: rgb(199, 199, 199);
   display: grid;
   place-items: center;
-  opacity: 0.9;
+  opacity: 1;
   transform: 0.3s;
 }
 
@@ -37,10 +37,6 @@ input:focus {
 
 .searchIcon svg {
   font-size: 35px;
-}
-
-.searchIcon:hover {
-  opacity: 1;
 }
 
 .button {

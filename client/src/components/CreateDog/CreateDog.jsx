@@ -195,13 +195,13 @@ export default function DogCreate() {
             <select className='listTemps' onChange={(e) => handleSelect(e)} >
               <option hidden>Dog's temperaments</option>
               {temperament.map((temp) => (
-                <option value={temp}>{temp}</option>
+                <option value={temp} key={temp}>{temp}</option>
               ))}
             </select>
           </div>
 
           <div className='temperamentsItems'>
-            <ul>{input.temperament.map((temp) => temp + '. ')}</ul>
+            <ul key={temperament}>{input.temperament.map((temp) => temp + '. ')}</ul>
           </div>
 
           <div>

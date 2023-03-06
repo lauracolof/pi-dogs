@@ -40,7 +40,6 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   let { name, minHeight, maxHeight, minWeight, maxWeight, lifeSpan, image, createdAtDb, temperament } = req.body;
 
-
   let dogCreated = await Dog.create({
     name,
     minHeight,

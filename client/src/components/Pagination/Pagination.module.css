@@ -1,12 +1,6 @@
 .Pagination__ul {
   list-style-type: none;
   padding: 5px;
-  margin-bottom: 0;
-  position: relative;
-}
-
-.Pagination__Li {
-  padding: 10px;
 }
 
 .list {
@@ -15,19 +9,22 @@
 }
 
 .list > button {
-
+  position: sticky;
+  color: #161a1d;
+  background-color: #90a955;
+  font-size: medium;
+  font-weight: 500;
   height: 35px;
   width: 35px;
-  margin: 5px;
-  bottom: 19px;
+  margin: 7px;
+  padding: 7px;
+  top: 165px;
   border-radius: 25px;
-  font-weight: 200;
   left: 135px;
-  color: rgb(255, 255, 255);
   cursor: pointer;
-  background-color: #000000a2;
   position: relative;
   flex-direction: row;
+
 }
 
 .list > button:hover {
@@ -40,36 +37,34 @@
   background-color: rgb(71, 117, 218);
 }
 
-
-.advanceButton {
+.backButton {
+  color: #161a1d;
+  background-color: #90a955;
+  font-size: medium;
+  font-weight: 500;
   position: relative;
-  left: 1157px;
-  bottom: 65px;
-  height: 35px;
-  width: 65px;
   border-radius: 17px;
-  font-weight: 200;
-  letter-spacing: 2.5px;
-  color: rgb(255, 255, 255);
+  top: 102px;
+  left: 85px;
+  height: 35px;
+  width: 45px;
+  letter-spacing: 2px;
   transition: 0.3s;
-  cursor: pointer;
-  /* border: transparent; */
-  background-color: #000000a2;
+  cursor: pointer
 }
 
-.backButton {
+.advanceButton {
+  color: #161a1d;
+  background-color: #90a955;
+  font-size: medium;
+  font-weight: 500;
   position: relative;
-  bottom: 65px;
-  left: 74px;
-  height: 35px;
-  width: 65px;
   border-radius: 17px;
-  font-weight: 200;
-  letter-spacing: 2.5px;
-  color: rgb(255, 255, 255);
-  /* -webkit-box-reflect: below 5px linear-gradient(transparent, #0002); */
+  top: 102px; 
+  left: 1177px;
+  height: 35px;
+  width: 45px;
+  letter-spacing: 2px;
   transition: 0.3s;
-  cursor: pointer;
-  /* border: transparent; */
-  background-color: #000000a2;
+  cursor: pointer
 }

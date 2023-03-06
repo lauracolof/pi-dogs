@@ -1,5 +1,5 @@
 import React from "react";
-import Fou from '../img/loading.gif';
+import Icon from '../img/loading.gif';
 import './LoadingScreen.css';
 
 export default function LoadingScreen ({setLoading}) {
@@ -7,7 +7,7 @@ export default function LoadingScreen ({setLoading}) {
     <>
       <div className='woorupape' />
         <div className='fouGif'>
-          <img src={Fou} alt="" />
+          <img src={Icon} alt="" />
         </div>
         <div className='loadingTime'>
           {

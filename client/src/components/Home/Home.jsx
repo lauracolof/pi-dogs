@@ -14,7 +14,7 @@ export default function Home () {
 
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1); // inicio en la primer página
-  const [dogsPerPage, ] = useState(8) // cuántas cartas muestro por página
+  const [dogsPerPage, ] = useState(9) // cuántas cartas muestro por página
   const [, setPeso] = useState('');
   const [, setOrder] = useState('');
 
@@ -35,6 +35,7 @@ export default function Home () {
   };
 
   const lastPage = allDogs.length / dogsPerPage;
+  //if i had 100dogs = 100dogs.lenght / 10 dogsPerPage => last page = 10;
 
   const nextPage = () => {
     if(currentPage < lastPage) {
@@ -83,25 +84,25 @@ export default function Home () {
       : 
       <div className='doggos'>
         <div className='lists'>
-          <select className='listAlpha' onChange={(e) => handleSort(e)}>
+          <select key='order' className='listAlpha' onChange={(e) => handleSort(e)}>
             <option hidden='all'>Default order</option>
             <option value='Asc'>A-Z</option>
             <option value='Desc'>Z-A</option>
           </select>
 
-          <select className='listAlpha' onChange={(e) => handleFilterDogByWeight (e)}>
+          <select key='weight' className='listAlpha' onChange={(e) => handleFilterDogByWeight (e)}>
             <option value='AllWeights'>Unorderer weights</option>
             <option value='HeavyWeight'>Heaviest breeds</option>
             <option value='LightWeight'>Lightest breeds</option>
           </select>
 
-          <select className='listAlpha' onChange={(e) => handleFilterDogByCreated(e) }>
+          <select key='created' className='listAlpha' onChange={(e) => handleFilterDogByCreated(e) }>
           <option hidden='AllCreated'>All breeds</option>
             <option value='Api'>Existing breeds</option>
             <option value='Created'>Created breeds</option>
           </select>
 
-          <select onChange={(e) => handleFilterDogsByTemperament (e)} className='listAlpha'>
+          <select key='temper' onChange={(e) => handleFilterDogsByTemperament (e)} className='listAlpha'>
             
             <option value='Temps'>Temperaments</option>
             {temperament.map((temp) => (
@@ -116,7 +117,7 @@ export default function Home () {
 
         <div className='positions'>
           {currentDog?.map((e) => {
-          console.log(e.temperaments)
+          // console.log(e.temperaments)
             return (
               <Fragment>
                 {
@@ -125,15 +126,15 @@ export default function Home () {
                   id={e.id}
                   name={e.name}
                   image={e.image}
-                    temperament={e.temperament}
-                    temperaments={e.temperaments}
-                    height={e.height + 'cm'}
-                    weight={e.weight + 'kg'}
-                    minHeight={e.minHeight}
-                    maxHeight={e.maxHeight}
-                    minWeight={e.minWeight}
-                    maxWeight={e.maxWeight}
-                    createdAtDb={e.createdAtDb}
+                  temperament={e.temperament}
+                  temperaments={e.temperaments}
+                  height={e.height + 'cm'}
+                  weight={e.weight + 'kg'}
+                  minHeight={e.minHeight}
+                  maxHeight={e.maxHeight}
+                  minWeight={e.minWeight}
+                  maxWeight={e.maxWeight}
+                  createdAtDb={e.createdAtDb}
                   />
                 }
               </Fragment>
@@ -142,6 +143,7 @@ export default function Home () {
         </div>
 
         <Pagination 
+          key='key'
           dogsPerPage={dogsPerPage}
           allDogs={allDogs.length}
           pagination={pagination}

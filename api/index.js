@@ -20,12 +20,14 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const { savedTemperaments } = require('./src/insertTemperamentsDB/getTemperaments');
+require('dotenv').config();
+const { PORT } = process.env;
 
 // Syncing all the models at once.
 
 conn.sync({ force: false }).then(() => {
-  server.listen(3001, async () => {
+  server.listen(PORT, async () => {
     await savedTemperaments();
-    console.log('%s listening at PORT: 3001'); // eslint-disable-line no-console
+    console.log(`Server running on PORT: ${PORT}`); // eslint-disable-line no-console
   });
 });

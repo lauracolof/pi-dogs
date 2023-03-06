@@ -15,20 +15,15 @@ export default function Card ({name, image, temperament, minHeight, maxHeight, m
       </div>
 
       <div className='card-content'>
-        <h4 className='temperaments'>Temperaments:  
-          {temperaments !== undefined ? " " + temperaments.map((t) => t.name).join(', ') : " " + temperament}
-        </h4>
-        <h5 className='heightAndWeight'>Weight: 
-          {
-            minWeight !== undefined ? " " + minWeight + " - " + maxWeight + "kg" : " " + weight
-          }
-        </h5>
-        <h5 className='heightAndWeight'>Height: 
-          {
-            minHeight !== undefined ? " " + minHeight + " - " + maxHeight + "cm" : " " + height
-          }</h5>
+        <h4 className='Temperamentss' key={temperament}>Temperaments</h4>
+          <p className="TemperamentsP">{temperaments !== undefined ? " " + temperaments.map((t) => t.name).join(', ') : " " + temperament}</p>
+        <h4 className='Weightt' key={weight}>Weight</h4>
+        <p className="WeightP">{minWeight !== undefined ? " " + minWeight + " - " + maxWeight + "kg" : " " + weight}</p>
+        
+        <h4 className='Heightt' key={height}>Height</h4>
+        <p className="HeightP">{minHeight !== undefined ? " " + minHeight + " - " + maxHeight + "cm" : " " + height}</p>
         <Link to={'/home/' + id}>
-          <button className='btn'>Learn more</button>
+          <button className='btnCard'>Learn more</button>
         </Link>
       </div>
     </div>

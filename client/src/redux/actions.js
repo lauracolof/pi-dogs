@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const GET_DOGS = 'GET_DOGS';
 export const GET_DOGS_NAME = 'GET_DOGS_NAME';
 export const GET_DOGS_TEMPERAMENT = 'GET_DOGS_TEMPERAMENT';
@@ -6,7 +8,6 @@ export const ORDER_BY_WEIGHT = 'ORDER_BY_WEIGHT';
 export const FILTER_BY_CREATED = 'FILTER_BY_CREATED';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const FILTER_DOGS_BY_TEMPERAMENT = 'FILTER_DOGS_BY_TEMPERAMENT';
-
 
 
 export const getDogs = () => (dispatch) => {
